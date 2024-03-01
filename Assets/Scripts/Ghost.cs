@@ -1,4 +1,5 @@
 using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Ghost : MonoBehaviour
     public GhostFrightened frightened {get; private set;}
     public GhostScatter scatter {get; private set;}
     public GhostBehavior initialBehavior; 
+    public GameManager gameManager;
 
     public Transform target;
     public int points = 200;
@@ -39,6 +41,12 @@ public class Ghost : MonoBehaviour
         
 
         if (home != initialBehavior) {
+            if (Random.Range(0f, 1f)<0.5f){
+                initialBehavior=this.chase;
+            }
+            else{
+                initialBehavior=this.scatter;
+            }
             home.Disable();
         }
 
@@ -52,10 +60,10 @@ public class Ghost : MonoBehaviour
 
         if (collision.gameObject.layer== LayerMask.NameToLayer("Pacman")){
             if (this.frightened.enabled){
-                FindAnyObjectByType<GameManager>().GhostEaten(this);
+                gameManager.GhostEaten(this);
             }
             else {
-                FindAnyObjectByType<GameManager>().PacmanEaten ();
+                gameManager.PacmanEaten ();
             }
         }
         
@@ -64,7 +72,7 @@ public class Ghost : MonoBehaviour
     public void SetPosition(Vector3 position)
     {
         // Keep the z-position the same since it determines draw depth
-        position.z = transform.position.z;
-        transform.position = position;
+        position.z = transform.localPosition.z;
+        transform.localPosition = position;
     }
 }

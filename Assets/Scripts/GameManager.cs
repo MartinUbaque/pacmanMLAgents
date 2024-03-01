@@ -3,22 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public Ghost[] ghosts;
 
     private int ghostMultiplier = 1;
+ [SerializeField]
+    private LearningAgent agent;
 
-    public LearningAgent agent;
+    [SerializeField]
+    private Pacman  pacman;
+ [SerializeField]
+    private Transform pellets;
 
-    public Pacman  pacman;
-
-    public Transform pellets;
+    public bool withGhosts;
 
     public int score {get; private set;}
 
-     public int lives {get; private set;}
+     public int lives {get; private  set;}
+
+  /*   public TextMeshProUGUI scoreView;
+    
+    public TextMeshProUGUI livesView; */
 
      private void Start(){
 
@@ -26,18 +34,12 @@ public class GameManager : MonoBehaviour
 
      }
 
-     private void Update() {
 
-        if (this.lives<=0 && Input.anyKeyDown){
-            NewGame();
-        }
-        
-     }
+     public void NewGame(){
 
-     private void NewGame(){
-
-        SetScore(0);
         SetLives(3);
+        SetScore(0);
+        
         NewRound();
      }
 
@@ -46,12 +48,15 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score){
 
         this.score = score;
+        //scoreView.text = score.ToString();
+
 
      }
 
      private void SetLives(int lives){
 
         this.lives = lives;
+        //livesView.text=lives.ToString();
 
      }
 
@@ -68,62 +73,81 @@ public class GameManager : MonoBehaviour
 
     private void ResetState(){
 
+        if (!withGhosts){
+            for (int i = 0; i<ghosts.Length; i++){
+            this.ghosts[i].gameObject.SetActive(false);
+
+        }
+        }
+        else{
         for (int i = 0; i<ghosts.Length; i++){
             this.ghosts[i].ResetState();
 
         }
-        this.pacman.ResetState();
+        }
+    
+        pacman.ResetState();
         ResetGhostMultiplier();
     }
 
     private void GameOver(){
+        
         //UI LATER
         for (int i = 0; i<ghosts.Length; i++){
             this.ghosts[i].gameObject.SetActive(false);
 
         }
         this.pacman.gameObject.SetActive(false);
-        agent.EndEpisode();
+        
     }
 
     public void GhostEaten(Ghost ghost){
         this.ghostMultiplier+=1;
         SetScore(this.score+ghost.points*this.ghostMultiplier); 
-        agent.AddReward(ghost.points*this.ghostMultiplier);
+        agent.AddReward(ghost.points*this.ghostMultiplier/100);
         
     }
 
     public void PacmanEaten(){
 
-        this.pacman.gameObject.SetActive(false);
+        pacman.Die();
         SetLives(this.lives-1);
+
+        
         
         if (lives>0){
-            Invoke(nameof(ResetState),3f);
-            agent.AddReward(-100f);
+            agent.AddReward(-100/100);
+            ResetState();
+            
         }
         else{
-            GameOver();
+
+            foreach(Transform pellet in this.pellets){
+
+            agent.AddReward(-1/100);
+        }
+            
+            agent.AddReward(-score/2/100);
+
+            agent.EndEpisode();
+            Debug.Log("Episode end");
         }
     }
 
     public void PelletEaten(Pellet pellet){
         pellet.gameObject.SetActive(false);
         SetScore(this.score+pellet.points); 
-        agent.AddReward(pellet.points);
+        agent.AddReward(pellet.points/100);
 
         if(!HasRemainingPellets()){
-            pacman.gameObject.SetActive(false);
-            agent.AddReward(pellet.points*100);
-            
-            Invoke(nameof(NewRound),3f);
+            NewRound();
         }
     }
 
     public void PowerPelletEaten(PowerPellet pellet){
 
 
-        agent.AddReward(pellet.points);
+        
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier),pellet.duration);
@@ -133,6 +157,7 @@ public class GameManager : MonoBehaviour
             this.ghosts[i].frightened.Enable(pellet.duration);
 
         }
+
     }
 
     private bool HasRemainingPellets()

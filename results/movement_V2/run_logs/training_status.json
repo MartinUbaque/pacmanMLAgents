@@ -1,0 +1,47 @@
+{
+    "Movement_V2": {
+        "checkpoints": [
+            {
+                "steps": 2550096,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2550096.onnx",
+                "reward": 279.1595790253745,
+                "creation_time": 1708485182.9649208,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2550096.pt"
+                ]
+            },
+            {
+                "steps": 2551305,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2551305.onnx",
+                "reward": 274.1366033554077,
+                "creation_time": 1708485343.5470407,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2551305.pt"
+                ]
+            },
+            {
+                "steps": 2557857,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2557857.onnx",
+                "reward": 30.55032279342413,
+                "creation_time": 1708495818.474659,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2557857.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2557857,
+            "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2.onnx",
+            "reward": 30.55032279342413,
+            "creation_time": 1708495818.474659,
+            "auxillary_file_paths": [
+                "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V2\\Movement_V2\\Movement_V2-2557857.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

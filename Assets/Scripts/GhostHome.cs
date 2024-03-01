@@ -15,7 +15,8 @@ public class GhostHome : GhostBehavior
     {
         // Check for active self to prevent error when object is destroyed
         if (gameObject.activeInHierarchy) {
-            StartCoroutine(ExitTransition());
+            //StartCoroutine(ExitTransition());
+            ExitTransition();
         }
     }
 
@@ -28,9 +29,16 @@ public class GhostHome : GhostBehavior
         }
     }
 
-    private IEnumerator ExitTransition()
+
+    private void ExitTransition(){
+        ghost.SetPosition(new Vector2(0,2.5f));
+        ghost.movement.SetDirection(new Vector2(Random.value < 0.5f ? -1f : 1f, 0f), true);
+        ghost.movement.rigidbody.isKinematic = false;
+        ghost.movement.enabled = true; 
+    }
+    /* private IEnumerator ExitTransition()
     {
-        // Turn off movement while we manually animate the position
+         // Turn off movement while we manually animate the position
         ghost.movement.SetDirection(Vector2.up, true);
         ghost.movement.rigidbody.isKinematic = true;
         ghost.movement.enabled = false;
@@ -61,7 +69,7 @@ public class GhostHome : GhostBehavior
         // Pick a random direction left or right and re-enable movement
         ghost.movement.SetDirection(new Vector2(Random.value < 0.5f ? -1f : 1f, 0f), true);
         ghost.movement.rigidbody.isKinematic = false;
-        ghost.movement.enabled = true;
-    }
+        ghost.movement.enabled = true; 
+    } */
 
 }

@@ -7,7 +7,7 @@ public class GhostChase : GhostBehavior
     
     private void OnDisable() {
 
-        this.ghost.chase.Enable();
+        this.ghost.scatter.Enable();
         
     }
 
@@ -26,8 +26,8 @@ public class GhostChase : GhostBehavior
             {
                 // If the distance in this direction is less than the current
                 // min distance then this direction becomes the new closest
-                Vector3 newPosition = transform.position + new Vector3(availableDirection.x, availableDirection.y);
-                float distance = (ghost.target.position - newPosition).sqrMagnitude;
+                Vector3 newPosition = transform.localPosition + new Vector3(availableDirection.x, availableDirection.y);
+                float distance = (ghost.target.localPosition - newPosition).sqrMagnitude;
 
                 if (distance < minDistance)
                 {

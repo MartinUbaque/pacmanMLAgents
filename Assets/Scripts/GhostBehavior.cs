@@ -8,7 +8,7 @@ public abstract class GhostBehavior : MonoBehaviour
 
     public Ghost ghost {get; private set;}
 
-    public float duration;
+    //public float duration;
 
     private void Awake(){
         this.ghost = GetComponent<Ghost>();
@@ -17,7 +17,7 @@ public abstract class GhostBehavior : MonoBehaviour
 
     public virtual void Enable(){
 
-        Enable(this.duration);
+        Enable(Random.Range(5f, 15f));
     }
 
     public virtual void Enable(float duration){

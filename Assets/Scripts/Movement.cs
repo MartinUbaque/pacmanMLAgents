@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        startingPosition = transform.position;
+        startingPosition = transform.localPosition;
     }
 
     private void Start()
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
         speedMultiplier = 1f;
         direction = initialDirection;
         nextDirection = Vector2.zero;
-        transform.position = startingPosition;
+        transform.localPosition = startingPosition;
         rigidbody.isKinematic = false;
         enabled = true;
     }
@@ -56,6 +56,7 @@ public class Movement : MonoBehaviour
         // Only set the direction if the tile in that direction is available
         // otherwise we set it as the next direction so it'll automatically be
         // set when it does become available
+
         if (forced || !Occupied(directionInput))
         {   
             this.direction = directionInput;

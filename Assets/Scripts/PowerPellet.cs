@@ -6,10 +6,11 @@ public class PowerPellet : Pellet
 {
     public float duration = 8.0f;
 
+
     
 
-     protected override void Eat()
+     protected override void Eat(GameManager gameManager)
     {
-        FindAnyObjectByType<GameManager>().PowerPelletEaten(this);
+        gameManager.PowerPelletEaten(this);
     }
 }

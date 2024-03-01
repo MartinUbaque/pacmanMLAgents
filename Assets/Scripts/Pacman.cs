@@ -3,11 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Pacman : MonoBehaviour
 {
-    [SerializeField]
+
     private AnimatedSprite deathSequence;
     private SpriteRenderer spriteRenderer;
     private Movement movement;
     private new Collider2D collider;
+
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -22,13 +24,12 @@ public class Pacman : MonoBehaviour
 
          // Rotate pacman to face the movement direction
         float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
-        transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+        transform.localRotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 
     public void ResetState()
     {
 
-        enabled = true;
         spriteRenderer.enabled = true;
         collider.enabled = true;
         //deathSequence.enabled = false;
@@ -63,6 +64,13 @@ public class Pacman : MonoBehaviour
         }
 
        
+    }
+
+    public void Die()
+    {
+        // Disable rendering of the Pacman object
+        spriteRenderer.enabled = false;
+        collider.enabled = false;
     }
 
 }   

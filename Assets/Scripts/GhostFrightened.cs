@@ -34,8 +34,8 @@ public class GhostFrightened : GhostBehavior
     private void Eaten()
     {
         eaten = true;
-        ghost.SetPosition(ghost.home.inside.position);
-        ghost.home.Enable(duration);
+        ghost.SetPosition(ghost.home.inside.localPosition);
+        ghost.home.Enable(8);
 
         body.enabled = false;
         eyes.enabled = true;
@@ -78,15 +78,33 @@ public class GhostFrightened : GhostBehavior
             // Find the available direction that moves farthest from pacman
             foreach (Vector2 availableDirection in node.availableDirections)
             {
+                float distanceToPacMan = (ghost.target.localPosition - transform.localPosition).sqrMagnitude;
                 // If the distance in this direction is greater than the current
                 // max distance then this direction becomes the new farthest
-                Vector3 newPosition = transform.position + new Vector3(availableDirection.x, availableDirection.y);
-                float distance = (ghost.target.position - newPosition).sqrMagnitude;
+                if (distanceToPacMan<3){
+                Vector3 newPosition = transform.localPosition + new Vector3(availableDirection.x, availableDirection.y);
+                float distance = (ghost.target.localPosition - newPosition).sqrMagnitude;
 
                 if (distance > maxDistance)
                 {
                     direction = availableDirection;
                     maxDistance = distance;
+                }
+                }
+                else{
+
+                    int index = Random.Range(0, node.availableDirections.Count);
+             if (node.availableDirections.Count > 1 && node.availableDirections[index] == -ghost.movement.direction)
+            {
+                index++;
+
+                // Wrap the index back around if overflowed
+                if (index >= node.availableDirections.Count) {
+                    index = 0;
+                }
+            }
+            direction=node.availableDirections[index];
+
                 }
             }
 

@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1709268470",
+        "python_version": "3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 18:58:18) [MSC v.1900 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\m-uba\\Pacman MLAgent\\venv\\Scripts\\mlagents-learn C:\\Users\\m-uba\\Pacman MLAgent\\Assets\\TrainerConfig\\config.yaml --force",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.0+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1709268514"
+    },
+    "total": 44.008846299999995,
+    "count": 1,
+    "self": 0.005386499999993077,
+    "children": {
+        "run_training.setup": {
+            "total": 0.09332859999999998,
+            "count": 1,
+            "self": 0.09332859999999998
+        },
+        "TrainerController.start_learning": {
+            "total": 43.9101312,
+            "count": 1,
+            "self": 0.0006077000000033195,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 43.9095123,
+                    "count": 1,
+                    "self": 43.9095123
+                },
+                "trainer_threads": {
+                    "total": 8.99999996306633e-07,
+                    "count": 1,
+                    "self": 8.99999996306633e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 1.0299999999574538e-05,
+                    "count": 1,
+                    "self": 1.0299999999574538e-05
+                }
+            }
+        }
+    }
+}
