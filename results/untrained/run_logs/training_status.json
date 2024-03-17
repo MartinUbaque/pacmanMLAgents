@@ -1,0 +1,29 @@
+{
+    "Untrained": {
+        "checkpoints": [
+            {
+                "steps": 185,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\untrained\\Untrained\\Untrained-185.onnx",
+                "reward": -384.0,
+                "creation_time": 1710693017.1195264,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\untrained\\Untrained\\Untrained-185.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 185,
+            "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\untrained\\Untrained.onnx",
+            "reward": -384.0,
+            "creation_time": 1710693017.1195264,
+            "auxillary_file_paths": [
+                "C:\\Users\\m-uba\\Pacman MLAgent\\results\\untrained\\Untrained\\Untrained-185.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

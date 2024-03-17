@@ -53,6 +53,8 @@ MonoBehaviour:
   pacman: {fileID: 8363024592404798208}
   pellets: {fileID: 5289934189021970948}
   withGhosts: 1
+  scoreView: {fileID: 0}
+  livesView: {fileID: 0}
 --- !u!1 &993699299028713928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,7 +4051,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: Movement_V7
+  m_BehaviorName: Untrained
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -4081,6 +4083,9 @@ MonoBehaviour:
   - {fileID: 8287873176415112341}
   - {fileID: 2651591578934771728}
   gameManager: {fileID: 6698954229342358323}
+  runView: {fileID: 0}
+  finalScoreView: {fileID: 0}
+  run: 0
 --- !u!114 &1087765521131401188
 MonoBehaviour:
   m_ObjectHideFlags: 0

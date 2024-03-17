@@ -1008,6 +1008,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087765521131401188, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: DecisionPeriod
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087765521131401188, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: TakeActionsBetweenDecisions
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506567031096183044, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: runView
+      value: 
+      objectReference: {fileID: 1322707905}
+    - target: {fileID: 1506567031096183044, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: finalScoreView
+      value: 
+      objectReference: {fileID: 1602740848}
     - target: {fileID: 2273269693422589519, guid: e2bc2071626e8974c9b980c379600363, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -1060,10 +1076,50 @@ PrefabInstance:
       propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 386748c842f1245448f9a2b55144a93e, type: 3}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_BehaviorName
+      value: Definitivo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_InferenceDevice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_UseChildSensors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_ObservableAttributeHandling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095795640354385049, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408990294928641360, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4457161021661084566, guid: e2bc2071626e8974c9b980c379600363, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6698954229342358323, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: livesView
+      value: 
+      objectReference: {fileID: 2027611677}
+    - target: {fileID: 6698954229342358323, guid: e2bc2071626e8974c9b980c379600363, type: 3}
+      propertyPath: scoreView
+      value: 
+      objectReference: {fileID: 1042188092}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

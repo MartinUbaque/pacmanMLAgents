@@ -1,0 +1,65 @@
+{
+    "Movement_V8": {
+        "checkpoints": [
+            {
+                "steps": 18609023,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-18609023.onnx",
+                "reward": null,
+                "creation_time": 1709753634.207784,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-18609023.pt"
+                ]
+            },
+            {
+                "steps": 39338895,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39338895.onnx",
+                "reward": 829.75,
+                "creation_time": 1710091316.7317898,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39338895.pt"
+                ]
+            },
+            {
+                "steps": 39365873,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39365873.onnx",
+                "reward": 913.5,
+                "creation_time": 1710109589.951603,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39365873.pt"
+                ]
+            },
+            {
+                "steps": 39377771,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39377771.onnx",
+                "reward": 173.0,
+                "creation_time": 1710110055.3092694,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-39377771.pt"
+                ]
+            },
+            {
+                "steps": 49217476,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-49217476.onnx",
+                "reward": 874.75,
+                "creation_time": 1710279994.8407655,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-49217476.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 49217476,
+            "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8.onnx",
+            "reward": 874.75,
+            "creation_time": 1710279994.8407655,
+            "auxillary_file_paths": [
+                "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V8\\Movement_V8\\Movement_V8-49217476.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

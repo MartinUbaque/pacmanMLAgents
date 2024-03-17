@@ -22,13 +22,16 @@ public class GameManager : MonoBehaviour
 
     public int score {get; private set;}
 
+    public int totalScore {get; private set;}
+
      public int lives {get; private  set;}
 
-  /*   public TextMeshProUGUI scoreView;
+     public TextMeshProUGUI scoreView;
     
-    public TextMeshProUGUI livesView; */
+    public TextMeshProUGUI livesView; 
 
      private void Start(){
+        totalScore=0;
 
         NewGame();
 
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
 
      public void NewGame(){
 
+        
         SetLives(3);
         SetScore(0);
         
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score){
 
         this.score = score;
-        //scoreView.text = score.ToString();
+        scoreView.text = score.ToString();
 
 
      }
@@ -56,7 +60,7 @@ public class GameManager : MonoBehaviour
      private void SetLives(int lives){
 
         this.lives = lives;
-        //livesView.text=lives.ToString();
+        livesView.text=lives.ToString();
 
      }
 
@@ -104,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void GhostEaten(Ghost ghost){
         this.ghostMultiplier+=1;
         SetScore(this.score+ghost.points*this.ghostMultiplier); 
-        agent.AddReward(ghost.points*this.ghostMultiplier/100);
+        agent.AddReward(10);
         
     }
 
@@ -116,18 +120,15 @@ public class GameManager : MonoBehaviour
         
         
         if (lives>0){
-            agent.AddReward(-100/100);
+            agent.AddReward(-10);
             ResetState();
             
         }
         else{
 
-            foreach(Transform pellet in this.pellets){
-
-            agent.AddReward(-1/100);
-        }
+            totalScore=totalScore+score;
             
-            agent.AddReward(-score/2/100);
+            agent.AddReward(-20);
 
             agent.EndEpisode();
             Debug.Log("Episode end");
@@ -137,7 +138,7 @@ public class GameManager : MonoBehaviour
     public void PelletEaten(Pellet pellet){
         pellet.gameObject.SetActive(false);
         SetScore(this.score+pellet.points); 
-        agent.AddReward(pellet.points/100);
+        agent.AddReward(1);
 
         if(!HasRemainingPellets()){
             NewRound();
@@ -160,7 +161,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private bool HasRemainingPellets()
+    public bool HasRemainingPellets()
     {
         foreach (Transform pellet in pellets)
         {

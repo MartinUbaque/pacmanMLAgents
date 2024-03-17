@@ -1,0 +1,29 @@
+{
+    "Movement_V9": {
+        "checkpoints": [
+            {
+                "steps": 25618068,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V9\\Movement_V9\\Movement_V9-25618068.onnx",
+                "reward": -421.9166666666667,
+                "creation_time": 1710689650.385361,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V9\\Movement_V9\\Movement_V9-25618068.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 25618068,
+            "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V9\\Movement_V9.onnx",
+            "reward": -421.9166666666667,
+            "creation_time": 1710689650.385361,
+            "auxillary_file_paths": [
+                "C:\\Users\\m-uba\\Pacman MLAgent\\results\\movement_V9\\Movement_V9\\Movement_V9-25618068.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

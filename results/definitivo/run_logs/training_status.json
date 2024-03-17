@@ -1,0 +1,29 @@
+{
+    "Definitivo": {
+        "checkpoints": [
+            {
+                "steps": 4800,
+                "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\definitivo\\Definitivo\\Definitivo-4800.onnx",
+                "reward": -434.8181818181818,
+                "creation_time": 1710694937.4945693,
+                "auxillary_file_paths": [
+                    "C:\\Users\\m-uba\\Pacman MLAgent\\results\\definitivo\\Definitivo\\Definitivo-4800.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4800,
+            "file_path": "C:\\Users\\m-uba\\Pacman MLAgent\\results\\definitivo\\Definitivo.onnx",
+            "reward": -434.8181818181818,
+            "creation_time": 1710694937.4945693,
+            "auxillary_file_paths": [
+                "C:\\Users\\m-uba\\Pacman MLAgent\\results\\definitivo\\Definitivo\\Definitivo-4800.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}
