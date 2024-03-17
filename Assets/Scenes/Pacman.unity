@@ -1010,7 +1010,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1087765521131401188, guid: e2bc2071626e8974c9b980c379600363, type: 3}
       propertyPath: DecisionPeriod
-      value: 7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1087765521131401188, guid: e2bc2071626e8974c9b980c379600363, type: 3}
       propertyPath: TakeActionsBetweenDecisions
